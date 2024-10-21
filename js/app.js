@@ -26,7 +26,7 @@ class Tamagotchi {
     const lastActive = this.loadState("lastActive", Date.now());
     // calculate time passed since last load
     const timePassed = Date.now() - lastActive;
-    this.needsTimePassed(timePassed);
+    this.adjustNeedsBasedOnTimePassed(timePassed);
 
     // get dom elements
     this.avatarElement = document.getElementById("avatar");
@@ -52,21 +52,21 @@ class Tamagotchi {
     this.currentFrame = 0;
 
     // start processes
-    this.startDecay();
+    this.startTimers();
     this.startAnimation();
-    this.updateGUI();
+    this.updateUI();
   }
 
   // set decay rates depending on reaslistic or normal mode
   setDecayRates() {
     if (this.isRealisticMode) {
-      this.hungerDecayRate = (8 * 60 * 60 * 1000) / 3; // ?? gen idk these just feel right
-      this.funDecayRate = (3 * 60 * 60 * 1000) / 5;
-      this.sleepDecayRate = (8 * 60 * 60 * 1000) / 3;
+      this.hungerDecayRate = (8 * 60 * 60 * 1000) / 3; // 3 times a day
+      this.funDecayRate = (3 * 60 * 60 * 1000) / 5; // needs 5 play session in 3 hours
+      this.sleepDecayRate = (8 * 60 * 60 * 1000) / 3; // 3 times a day
     } else {
-      this.hungerDecayRate = 2500; // every 3 seconds
+      this.hungerDecayRate = 3000; // every 3 seconds
       this.funDecayRate = 2000; // every 2 seconds
-      this.sleepDecayRate = 3000; // every 5 seconds
+      this.sleepDecayRate = 5000; // every 5 seconds
     }
   }
 
@@ -74,7 +74,7 @@ class Tamagotchi {
   toggleMode() {
     this.isRealisticMode = !this.isRealisticMode;
     this.setDecayRates();
-    this.startDecay(); // restart timers with new decay rates
+    this.startTimers(); // restart timers with new decay rates
     this.saveState();
     document.getElementById("toggle-mode-btn").textContent = this
       .isRealisticMode
@@ -83,15 +83,15 @@ class Tamagotchi {
   }
 
   // set/reset times
-  startDecay() {
+  startTimers() {
     clearInterval(this.hungerTimer);
     clearInterval(this.funTimer);
     clearInterval(this.sleepTimer);
     this.hungerTimer = setInterval(
-      () => this.decayHunger(),
+      () => this.decreaseHunger(),
       this.hungerDecayRate
     );
-    this.funTimer = setInterval(() => this.decayFun(), this.funDecayRate);
+    this.funTimer = setInterval(() => this.decreaseFun(), this.funDecayRate);
     this.sleepTimer = setInterval(
       () => this.updateSleep(),
       this.sleepDecayRate
@@ -112,7 +112,7 @@ class Tamagotchi {
   }
 
   // decay hunger
-  decayHunger() {
+  decreaseHunger() {
     if (this.hunger > 0 && this.awake) {
       // decay while awake
       this.hunger -= 1;
@@ -122,11 +122,11 @@ class Tamagotchi {
       this.hunger -= 0.5;
       this.saveState();
     }
-    this.updateGUI();
+    this.updateUI();
   }
 
   // decay fun
-  decayFun() {
+  decreaseFun() {
     if (this.fun > 0 && this.awake) {
       // decay while awake
       this.fun -= 1;
@@ -136,7 +136,7 @@ class Tamagotchi {
       this.fun -= 0.5;
       this.saveState();
     }
-    this.updateGUI();
+    this.updateUI();
   }
 
   // update sleep / tiredness
@@ -145,34 +145,35 @@ class Tamagotchi {
       this.sleep -= 1;
       this.saveState();
     } else if (this.sleep <= 0 && this.awake) {
-      this.sleep();
+      this.goToSleep();
     } else if (!this.awake) {
       this.sleep += 1;
       if (this.sleep >= 100) {
-        this.wake();
+        this.wakeUp();
       }
       this.saveState();
     }
-    this.updateGUI();
+    this.updateUI();
   }
 
   // go to sleep
-  sleep() {
+  goToSleep() {
     this.awake = false;
     this.currentFrame = 0;
     this.saveState();
   }
 
   // wake up
-  wake() {
+  wakeUp() {
     this.awake = true;
+    this.sleep = Math.floor(Math.random() * 41) + 60; // Random between 60 and 100
     this.currentFrame = 0;
     this.saveState();
-    this.updateGUI();
+    this.updateUI();
   }
 
   // calculate needs decay based on how much time has passed on page load
-  needsTimePassed(timePassed) {
+  adjustNeedsBasedOnTimePassed(timePassed) {
     const hungerDecay = timePassed / this.hungerDecayRate;
     const funDecay = timePassed / this.funDecayRate;
     const sleepDecay = timePassed / this.sleepDecayRate;
@@ -187,7 +188,7 @@ class Tamagotchi {
     if (this.awake) {
       this.hunger = Math.min(this.hunger + 30, 100);
       this.saveState();
-      this.updateGUI();
+      this.updateUI();
     }
   }
 
@@ -196,12 +197,12 @@ class Tamagotchi {
     if (this.awake) {
       this.fun = Math.min(this.fun + 30, 100);
       this.saveState();
-      this.updateGUI();
+      this.updateUI();
     }
   }
 
   // update ui elements to match status
-  updateGUI() {
+  updateUI() {
     // get status the elements
     this.hungerElement.textContent = this.hunger;
     this.funElement.textContent = this.fun;
