@@ -1,0 +1,156 @@
+// button,
+// .btn,
+// a.btn,
+// input[type="button"],
+// input[type="reset"],
+// .gform_button {
+
+// 	/* == DEFAULT == */
+// 	border-top: none;
+// 	border-left: none;
+// 	border-right: none;
+// 	border-bottom: 2px solid $color-indigo;
+// 	color: $color-indigo;
+// 	font-size: 1.6rem;
+// 	font-weight: 500;
+// 	line-height: 140%;
+// 	margin-bottom: 1.8rem;
+// 	padding-bottom: 1rem;
+// 	text-decoration: none;
+// 	transition: background-color ease-in-out 0.15s;
+// 	cursor: pointer;
+
+// 	&:hover,
+// 	&:active,
+// 	&:focus {}
+
+// 	/* == FULL == */
+// 	&.full {
+// 		border: none;
+// 		border-radius: 100vmax 100vmax 100vmax 100vmax;
+// 		padding: 1.5rem 0 1.5rem 3rem;
+
+// 		&::after {
+// 			content: "";
+// 			margin-left: 1.5rem;
+// 			background-position: center;
+// 			background-repeat: no-repeat;
+// 			background-image: url("../images/ui/arrow-white-btn.svg");
+// 			padding: 1.5rem 2rem 1.5rem 2rem;
+// 			border-radius: 0 100vmax 100vmax 0;
+// 		}
+
+// 		&:hover,
+// 		&:active,
+// 		&:focus {}
+
+// 		// navy
+// 		&.navy {
+// 			background-color: $color-navy;
+// 			color: #FFFFFF;
+
+// 			&::after {
+// 				background-color: $color-deep-navy;
+// 			}
+
+// 			&:hover,
+// 			&:active,
+// 			&:focus {
+// 				background-color: $color-deep-navy;
+// 			}
+// 		}
+
+// 		// indigo
+// 		&.indigo {
+// 			background-color: $color-indigo;
+// 			color: #FFFFFF;
+
+// 			&::after {
+// 				background-color: $color-indigo-shade;
+// 			}
+
+// 			&:hover,
+// 			&:active,
+// 			&:focus {
+// 				background-color: $color-indigo-shade;
+// 			}
+// 		}
+// 	}
+
+// 	&.underline {
+// 		&::after {
+// 			content: "";
+// 			margin-left: 1.5rem;
+// 			padding: 0.5rem;
+// 			background-image: url("../images/ui/arrow-indigo-btn.svg");
+// 			background-position: center;
+// 			background-repeat: no-repeat;
+// 			transition: margin-left ease-in-out 0.15s;
+// 		}
+
+// 		&:hover,
+// 		&:active,
+// 		&:focus {
+// 			&:after {
+// 				margin-left: 2rem;
+// 			}
+// 		}
+
+// 		&.indigo {
+// 			border-bottom: 2px solid $color-indigo;
+// 			color: $color-indigo;
+
+// 			&::after {
+// 				background-image: url("../images/ui/arrow-indigo-btn.svg");
+// 			}
+// 		}
+
+// 		&.mint {
+// 			color: #FFFFFF;
+// 			border-bottom: 2px solid $color-mint;
+
+// 			&::after {
+// 				background-image: url("../images/ui/arrow-mint-btn.svg");
+// 			}
+// 		}
+// 	}
+// }
+
+// input[type="submit"],
+// input[type="submit"].gform_button {
+// 	border: none;
+// 	border-radius: 100vmax 100vmax 100vmax 100vmax;
+// 	padding: 1.5rem 0 1.5rem 3rem;
+// 	background-color: $color-indigo;
+// 	color: #FFFFFF;
+
+// 	&::after {
+// 		content: "";
+// 		margin-left: 1.5rem;
+// 		background-position: center;
+// 		background-repeat: no-repeat;
+// 		background-image: url("../images/ui/arrow-white-btn.svg");
+// 		padding: 1.5rem 2rem 1.5rem 2rem;
+// 		border-radius: 0 100vmax 100vmax 0;
+// 		background-color: $color-indigo-shade;
+// 	}
+
+// 	&:hover,
+// 	&:active,
+// 	&:focus {
+// 		background-color: $color-indigo-shade;
+// 	}
+// }
+
+button {
+    color: #031010;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: "ITC Avant Garde Gothic Std", Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    background-color: white;
+    border-radius: 100vw;
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+}

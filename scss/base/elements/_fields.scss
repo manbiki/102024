@@ -1,0 +1,163 @@
+// input[type="text"],
+// input[type="email"],
+// input[type="url"],
+// input[type="password"],
+// input[type="search"],
+// input[type="number"],
+// input[type="tel"],
+// input[type="range"],
+// input[type="date"],
+// input[type="month"],
+// input[type="week"],
+// input[type="time"],
+// input[type="datetime"],
+// input[type="datetime-local"],
+// input[type="color"],
+// textarea {
+// 	width: 100%;
+// 	font-family: $font-serif;
+// 	color: $color-deep-navy;
+// 	font-size: 1.8rem;
+// 	line-height: 180%;
+// 	font-weight: 400;
+// 	border: none;
+// 	background-color: #ECECEC;
+// 	border-radius: 3rem;
+// 	padding: 1rem 2rem;
+
+// 	&:focus {
+// 		color: #111;
+// 	}
+// }
+
+// select,
+// select.large {
+// 	width: 100%;
+// 	border: none;
+// 	font-family: $font-serif;
+// 	color: $color-deep-navy;
+// 	font-size: 1.8rem;
+// 	line-height: 180%;
+// 	font-weight: 400;
+// 	border-radius: 1rem;
+// 	background: url("../images/ui/select-dropdown.svg") #ECECEC right/contain no-repeat;
+// 	-webkit-appearance: none;
+// 	-moz-appearance: none;
+// 	padding: 1rem 2rem;
+// 	cursor: pointer;
+// }
+
+// select::-ms-expand {
+// 	display: none;
+// }
+
+// option {
+// 	font-family: $font-serif;
+// 	color: $color-deep-navy;
+// 	font-size: 1.8rem;
+// 	line-height: 180%;
+// 	font-weight: 400;
+// 	padding: 1rem 2rem;
+// 	cursor: pointer;
+// }
+
+// textarea,
+// textarea.large {
+// 	font-family: $font-serif;
+// 	color: $color-deep-navy;
+// 	font-size: 1.8rem;
+// 	line-height: 180%;
+// 	font-weight: 400;
+// 	background-color: #ECECEC;
+// }
+
+// input[type="submit"] {
+// 	cursor: pointer;
+// }
+
+// .gform-body {
+
+// 	legend {
+// 		opacity: 0;
+// 	}
+// }
+
+// fieldset {
+// 	border: none;
+// 	margin: 0;
+// 	padding: 0;
+
+// 	.ginput_container {
+// 		display: flex;
+// 		justify-content: space-between;
+
+// 		@media screen and (max-width: 1000px) {
+// 			flex-direction: column;
+// 		}
+
+// 		span {
+// 			width: calc(50% - 1.5rem);
+
+// 			@media screen and (max-width: 1000px) {
+// 				width: 100%;
+
+// 				&:first-child {
+// 					margin-bottom: 1.5rem;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+// .gform_wrapper.gravity-theme form .gform-body .gform_fields {
+
+// 	input[type="text"],
+// 	input[type="email"],
+// 	input[type="url"],
+// 	input[type="password"],
+// 	input[type="search"],
+// 	input[type="number"],
+// 	input[type="tel"],
+// 	input[type="range"],
+// 	input[type="date"],
+// 	input[type="month"],
+// 	input[type="week"],
+// 	input[type="time"],
+// 	input[type="datetime"],
+// 	input[type="datetime-local"],
+// 	input[type="color"],
+// 	textarea {
+// 		width: 100%;
+// 		font-family: $font-serif;
+// 		color: $color-deep-navy;
+// 		font-size: 1.8rem;
+// 		line-height: 180%;
+// 		font-weight: 400;
+// 		border: none;
+// 		background-color: #ECECEC;
+// 		border-radius: 3rem;
+// 		padding: 1rem 2rem;
+// 		margin-bottom: 1rem;
+
+// 		&:focus {
+// 			color: #111;
+// 		}
+// 	}
+
+// 	select,
+// 	select.large {
+// 		width: 100%;
+// 		border: none;
+// 		font-family: $font-serif;
+// 		color: $color-deep-navy;
+// 		font-size: 1.8rem;
+// 		line-height: 180%;
+// 		font-weight: 400;
+// 		border-radius: 1rem;
+// 		background: url("../images/ui/select-dropdown.svg") #ECECEC right/contain no-repeat;
+// 		-webkit-appearance: none;
+// 		-moz-appearance: none;
+// 		padding: 1rem 2rem;
+// 		margin-bottom: 1rem;
+// 	}
+// }

@@ -1,0 +1,36 @@
+ul,
+ol {
+    margin-left: 3rem;
+
+    li {
+        font-family: $font-sans;
+        color: black;
+        font-size: 1.8rem;
+        font-size: clamp(1.6rem, 1.457rem + 0.238vw, 1.8rem);
+        line-height: 180%;
+        font-weight: 400;
+        margin-bottom: 1.8rem;
+    }
+}
+
+ul {
+    list-style: disc;
+}
+
+ol {
+    list-style: decimal;
+}
+
+li>ul,
+li>ol {
+    margin-bottom: 0;
+    margin-left: 1.5em;
+}
+
+dt {
+    font-weight: 700;
+}
+
+dd {
+    margin: 0 1.5em 1.5em;
+}

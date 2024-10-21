@@ -1,12 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-  </body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Barriss Day 2024</title>
+        <link rel="stylesheet" href="/css/style.min.css">
+        <script src="js/app.js" defer></script>
+    </head>
+
+    <body>
+        <main class="game-container">
+            <div class="secondary-controls">
+                <button id="toggle-mode-btn">Switch to Realistic Mode</button>
+                <button id="reset-btn">Reset Game</button>
+            </div>
+
+            <div class="display">
+                <div class="avatar-container">
+                    <img src="images/barriss/idle/idle1.png" id="avatar" class="avatar">
+                </div>
+                <div class="stats">
+                    <p>Hunger:
+                        <progress id="hunger-progress" value="100" max="100"></progress>
+                        (<span id="hunger-level">100</span>)
+                    </p>
+                    <p>Fun:
+                        <progress id="fun-progress" value="100" max="100"></progress>
+                        (<span id="fun-level">100</span>)
+                    </p>
+                    <p>Sleep:
+                        <progress id="sleep-progress" value="100" max="100"></progress>
+                        (<span id="sleep-level">100</span>)
+                    </p>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="buttons">
+                    <div class="main-controls">
+                        <button id="feed-btn">Feed</button>
+                        <button id="play-btn">Play</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="attribution">
+                <small>
+                    Special thanks for the art created by
+                    <a href="https://bluedeedeedoop.carrd.co/" target="_blank" rel="no-follow">bluedeedeedoop</a>!
+                </small>
+                <small>Game created by manbiki.</small>
+            </div>
+        </main>
+    </body>
+
 </html>

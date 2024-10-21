@@ -1,0 +1,138 @@
+.game-container {
+    margin: 0 auto;
+    max-width: 50rem;
+    min-width: 10rem;
+    width: 100%;
+
+    p,
+    small,
+    a {
+        color: white;
+    }
+
+    .display {
+        margin: 0 auto;
+
+        .avatar-container {
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 1rem;
+            background-image: url("/images/bg/bg-temple.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 120%;
+
+            border: 3px solid #5B8379;
+            background-color: rgba($color: #29534D, $alpha: 0.9);
+            border-radius: 2rem;
+            padding: 1rem;
+
+            position: relative;
+
+            .avatar {
+                width: 100%;
+                position: relative;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 2.5rem;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                width: 25rem;
+                height: 8rem;
+                border-radius: 100%;
+                background-color: #7C6258;
+                opacity: 75%;
+            }
+        }
+
+        .stats {
+            margin-top: 2rem;
+            border: 3px solid #5B8379;
+            background-color: rgba($color: #29534D, $alpha: 0.9);
+            border-radius: 2rem;
+            padding: 1rem;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            p {
+                color: white;
+                display: table-row;
+                font-size: 1.4rem;
+
+                progress {
+                    margin: 0 1rem;
+                }
+            }
+        }
+    }
+
+    .controls {
+        border: 3px solid #5B8379;
+        background-color: rgba($color: #29534D, $alpha: 0.9);
+        border-radius: 1rem;
+        padding: 1rem;
+        margin-top: 2rem;
+        width: 100%;
+
+        .buttons {
+            width: 100%;
+
+            .main-controls {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                button {
+                    &:first-child {
+                        margin-right: 2rem;
+                    }
+
+                    &:hover {
+                        font-family: "Aurebesh";
+                    }
+                }
+            }
+        }
+    }
+
+    .attribution {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid gray;
+
+        small {
+            display: block;
+        }
+
+        a {
+            text-decoration: underline;
+
+            &:hover {
+                color: #7fb9ab;
+            }
+        }
+    }
+}
+
+.secondary-controls {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+        font-size: 1.2rem;
+
+        &:first-child {
+            margin-right: 1rem;
+        }
+    }
+}

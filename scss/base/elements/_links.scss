@@ -1,0 +1,27 @@
+a {
+    color: black;
+    font-family: $font-sans;
+    font-size: inherit;
+    line-height: 150%;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+
+    &:visited {
+        color: black;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: blue;
+    }
+
+    &:focus {
+        outline: thin dotted;
+    }
+
+    &:hover,
+    &:active {
+        outline: 0;
+    }
+}
