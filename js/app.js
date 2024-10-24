@@ -166,7 +166,6 @@ class Tamagotchi {
   // wake up
   wakeUp() {
     this.awake = true;
-    this.sleep = Math.floor(Math.random() * 41) + 60; // Random between 60 and 100
     this.currentFrame = 0;
     this.saveState();
     this.updateUI();
