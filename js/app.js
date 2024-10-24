@@ -60,9 +60,9 @@ class Tamagotchi {
   // set decay rates depending on reaslistic or normal mode
   setDecayRates() {
     if (this.isRealisticMode) {
-      this.hungerDecayRate = (8 * 60 * 60 * 1000) / 3; // 3 times a day
-      this.funDecayRate = (3 * 60 * 60 * 1000) / 5; // needs 5 play session in 3 hours
-      this.sleepDecayRate = (8 * 60 * 60 * 1000) / 3; // 3 times a day
+      this.hungerDecayRate = 30000; // 30 secomds
+      this.funDecayRate = 20000; // 20 seconds
+      this.sleepDecayRate = 60000; // 1 min
     } else {
       this.hungerDecayRate = 3000; // every 3 seconds
       this.funDecayRate = 2000; // every 2 seconds
